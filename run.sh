@@ -8,7 +8,7 @@ docker build -t android-build-tools:latest .
 git clone https://github.com/franciscofranco/beryllium.git
 
 #- Copy Build Scripts
-cp -f ./build.sh ./beryllium/
+cp -f ./run_in_docker.sh ./beryllium/
 
 #- Mount And Build It
 #>> DEF_CONFIG is on under arch/arm64/config
