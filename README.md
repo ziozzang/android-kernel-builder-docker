@@ -1,4 +1,5 @@
 # Tl;DR
+://www.clien.net/service/board/park/13138836?od=T31&po=0&category=&groupCd=eryllium_defconfig"
 * android-kernel-builder-docker
   * Dockerized Android Kernel build Environments.
   * build with GCC or Clang (latest prebuilt AOSP env.)
@@ -48,17 +49,21 @@ docker run \
 # Inside container
 git clone ........
 build_kernel_gcc some_predefined_defconfig
+
+# or...
+build_kernel_clang some_predefined_defconfig
+
 ```
 
-* second parameter is provided by kernel developer.
+* second parameter is generally provided by kernel developer.
   * for example Franco Kernel for Pocophone F1 is 'franco_defconfig'
-  * configuration is exised on "./arch/arm64/configs/"
+  * for qualcomm or MTK, configuration is exised on "./arch/arm64/configs/"
 
 ## Boot with Android Devices
 ```
 fastboot boot zImage
 ```
 
-# Testing
+# Test
 Tested with Poco F1/FrancoKernel, Poco F1/Derp
 
