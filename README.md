@@ -1,5 +1,4 @@
 # Tl;DR
-://www.clien.net/service/board/park/13138836?od=T31&po=0&category=&groupCd=eryllium_defconfig"
 * android-kernel-builder-docker
   * Dockerized Android Kernel build Environments.
   * build with GCC or Clang (latest prebuilt AOSP env.)
