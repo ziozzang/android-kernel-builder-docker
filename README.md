@@ -20,7 +20,7 @@ docker run \
         -it --rm \
         --privileged=true \
         --volume $(pwd)/derp:/kernel \
-        -entrypoint=bash \
+        --entrypoint=bash \
         ziozzang/android-build-tools -c "build_kernel_gcc beryllium_defconfig"
 ```
 
@@ -31,7 +31,7 @@ docker run \
         -it --rm \
         --privileged=true \
         --volume $(pwd)/derp:/kernel \
-        -entrypoint=bash \
+        --entrypoint=bash \
         ziozzang/android-build-tools -c "build_kernel_gcc beryllium_defconfig"
 ```
 
