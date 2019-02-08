@@ -6,17 +6,24 @@ if [ -z "${BUILD_DEFCONFIG}" ]; then
 fi
 
 OUTPUT_DIR="./output"
+PATH="/toolchain/clang/bin:/toolchain/gcc/bin:${PATH}" \
+
 echo "Bulding with DEFCONFIG='${BUILD_DEFCONFIG}'"
 echo ">> clean"
 make clean
 echo "<< clean"
 mkdir -p ${OUTPUT_DIR}
 echo ">> mrproper"
-make mrproper
+make mrproper  O=${OUTPUT_DIR} 
 echo "<< mrproper"
 echo ">> config"
-make O=${OUTPUT_DIR} ${BUILD_DEFCONFIG}
+make O=${OUTPUT_DIR} ARCH=arm64 ${BUILD_DEFCONFIG}
 echo "<< config"
 echo ">> build"
-make O=${OUTPUT_DIR} -j$(nproc --all)
+make all O=${OUTPUT_DIR} \
+   -j$(nproc --all) \
+   ARCH=arm64 \
+   CC=clang \
+   CLANG_TRIPLE=aarch64-linux-gnu- \
+   CROSS_COMPILE=aarch64-linux-android-
 echo "<< build"
