@@ -10,7 +10,7 @@ docker run \
         -it --rm \
         --privileged=true \
         --volume $(pwd)/beryllium_franco:/kernel \
-        -entrypoint=bash \
+        --entrypoint=bash \
         ziozzang/android-build-tools -c "build_kernel_clang ${DEF_CONFIG}"
 
 
