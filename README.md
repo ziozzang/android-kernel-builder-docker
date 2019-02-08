@@ -20,7 +20,8 @@ docker run \
         -it --rm \
         --privileged=true \
         --volume $(pwd)/derp:/kernel \
-        ziozzang/android-build-tools build_kernel_gcc beryllium_defconfig
+        -entrypoint=bash \
+        ziozzang/android-build-tools -c "build_kernel_gcc beryllium_defconfig"
 ```
 
 * Build with Clang
@@ -30,12 +31,14 @@ docker run \
         -it --rm \
         --privileged=true \
         --volume $(pwd)/derp:/kernel \
-        ziozzang/android-build-tools build_kernel_gcc beryllium_defconfig
+        -entrypoint=bash \
+        ziozzang/android-build-tools -c "build_kernel_gcc beryllium_defconfig"
 ```
 
 * Build inside container
 
 ```
+# default shell will be zsh.
 docker run \
         -it --rm \
         --privileged=true \
